@@ -9,8 +9,9 @@
 
 using namespace std;
 
-const int length = 6;
+const int length = 12;
 int perm[length];
+char out[] = {'0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'}; 
 
 uint32_t base_mat[length];
 uint32_t created_mat[2 * length];
@@ -30,7 +31,7 @@ void valid_perms_to_file() {
 // prints the current permutation
 void print_perm() {
 	for(int i = 0; i < length; i++) {
-		cout << perm[i] << " ";
+		cout << out[perm[i]] << " ";
 	}
 	cout << endl;
 }
@@ -104,13 +105,13 @@ void create_base_mat() {
 	set_entry_base_mat(5, 8);
 	set_entry_base_mat(6, 9);*/
 
-	/*ex(6;4) C_6*/
+	/*ex(6;4) C_6
 	set_entry_base_mat(0, 1);
 	set_entry_base_mat(1, 2);
 	set_entry_base_mat(2, 3);
 	set_entry_base_mat(3, 4);
 	set_entry_base_mat(4, 5);
-	set_entry_base_mat(5, 0);
+	set_entry_base_mat(5, 0);*/
 
 	/*ex(4;4) P_4
 	set_entry_base_mat(0, 1);
@@ -127,7 +128,38 @@ void create_base_mat() {
 	/*ex(3;4) P_3 
 	set_entry_base_mat(0,1);
 	set_entry_base_mat(1,2);*/
-	
+
+	/*ex(8;4) Unknown what it's isomorphic to
+	set_entry_base_mat(0,1);
+	set_entry_base_mat(0,5);
+	set_entry_base_mat(1,2);
+	set_entry_base_mat(1,7);
+	set_entry_base_mat(2,3);
+	set_entry_base_mat(2,4);
+	set_entry_base_mat(3,6);
+	set_entry_base_mat(4,5);
+	set_entry_base_mat(5,6);
+	set_entry_base_mat(6,7);*/
+
+	/*ex(12;4) unknown what it's isomorphic to*/
+	set_entry_base_mat(0,1);
+	set_entry_base_mat(0,5);
+	set_entry_base_mat(0,6);
+	set_entry_base_mat(1,2);
+	set_entry_base_mat(1,8);
+	set_entry_base_mat(2,3);
+	set_entry_base_mat(2,10);
+	set_entry_base_mat(3,4);
+	set_entry_base_mat(3,7);
+	set_entry_base_mat(4,5);
+	set_entry_base_mat(4,11);
+	set_entry_base_mat(5,9);
+	set_entry_base_mat(6,7);
+	set_entry_base_mat(6,11);
+	set_entry_base_mat(7,8);
+	set_entry_base_mat(8,9);
+	set_entry_base_mat(9,10);
+	set_entry_base_mat(10,11);
 }
 
 // creates the created matrix which is two copies
